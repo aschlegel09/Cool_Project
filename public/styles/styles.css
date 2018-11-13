@@ -1,3 +1,38 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#content {
+  margin-top: 10%;
+}
+
+body {
+  background-image: url("https://images.pexels.com/photos/450062/pexels-photo-450062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  font-family: "Muli", sans-serif;
+}
+
+#signInBtn {
+  background-color: rgba(20, 13, 51, 0.3);
+  color: white;
+}
+
+#title {
+  /* font-family: 'Concert One', sans-serif; */
+  color: white;
+}
+
+#optionBtn {
+  background-color: rgba(20, 13, 51, 0.3);
+  color: white;
+}
+
+#pageFooter {
+  background-color: rgba(20, 13, 51, 0.3) !important;
+  color: grey;
+}
+
+
+/* .linespacing-title {
+  line-height: 1;
+} */
