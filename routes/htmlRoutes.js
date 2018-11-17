@@ -11,7 +11,7 @@ module.exports = function (app) {
   });
 
   app.get("/view", function (req, res) {
-    db.Item.findAll({}).then(function (dbItems) {
+    db.Item.findAll({ }).then(function (dbItems) {
       res.render("view", {
         items: dbItems
       });
