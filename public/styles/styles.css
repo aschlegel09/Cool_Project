@@ -28,7 +28,7 @@ body {
 }
 
 #pageFooter {
-  background-color: rgba(20, 13, 51, 0.3) !important;
+  background-color: rgba(20, 13, 51, 0.8) !important;
   color: grey;
 }
 
@@ -36,3 +36,4 @@ body {
 /* .linespacing-title {
   line-height: 1;
 } */
+

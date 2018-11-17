@@ -1,17 +1,96 @@
 {{!-- CREATE --}}
 <div id="create">
+  <div class="container-fluid">
+    <div class="row">
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
                 <h2>Bucket List!</h2>
+
+                {{!-- START CREATE FORM --}}
                 <form class="clearfix mb-4" action="POST">
+
+                    {{!-- TITLE LIST --}}
                     <div class="form-group">
-                        <label for="item-text">Item Text</label>
-                        <input type="text" id="item-text" class="form-control" aria-describedby="item-text" placeholder="Enter Item Text">
+                        <label for="title">Bucket List Title</label>
+                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Things I Want To Do!">
                     </div>
-                    <button id="submit" class="btn btn-primary float-right" onClick="location.href = '/view'">Submit</button>
+
+                    {{!-- DESCRIPTION --}}
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" aria-describedby="description" placeholder="Tell us a little bit about your list! What inspired you to create this list? Why/how did you decide what things you want to do?"></textarea>
+                    </div>
+
+                    {{!-- SELECT CATEGORY --}}
+                    <div class="form-group">
+                        <label for="category">Select Category</label>
+                        <select class="form-control" id="category">
+                            <option>Family</option>
+                            <option>Food and Drink</option>
+                            <option>Friendships</option>
+                            <option>General</option>
+                            <option>Outdoor Adventures</option>
+                            <option>Travel</option>
+                        </select>
+                    </div>
+
+                    {{!-- SELECT TIME FRAME --}}
+                    <div class="form-group">
+                        <label for="duration">Select Duration</label>
+                        <select class="form-control" id="duration">
+                            <option>1 Month</option>
+                            <option>6 Months</option>
+                            <option>1 Year</option>
+                            <option>5 Years</option>
+                            <option>10 Years</option>
+                            <option>15 Years</option>
+                            <option>20 Years</option>
+                            <option>25 Years</option>
+                            <option>Forever</option>
+                        </select>
+                        </div>
+
+
+            <div id="content">
+                <div class="form-group">
+                        <label for="title">Add Items</label>
+                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
+                    </div>
+                     <div class="form-group">
+                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
+                    </div>
+            </div>  
+            <button type="button" class="btn addmore" id="optionBtn">Click me</button>
+
+       {{!-- <input type="button" id="moreFields" value="Add More" /> --}}
+   
+<br>
+                <button type="button" class="btn btn-secondary float-right submit action-button submitBtn" onClick="location.href = /view/" id="optionBtn">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+
+
+
+  $(document).ready(function(){
+    $('.addmore').click(function(){
+       console.log("clicked");
+    });
+  });
+
+
+</script>

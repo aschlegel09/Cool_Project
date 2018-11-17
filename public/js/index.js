@@ -1,4 +1,5 @@
 // Get references to page elements
+
 var $itemText = $("#item-text");
 var $submitBtn = $("#submit");
 var $itemList = $("#item-list");
