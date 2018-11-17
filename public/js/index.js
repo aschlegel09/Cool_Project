@@ -1,7 +1,13 @@
 // Get references to page elements
 
+console.log("help me");
+
 var $itemText = $("#item-text");
-var $submitBtn = $("#submit");
+var $itemDescription = $("#description");
+var $itemCategory = $("#category");
+var $itemDuration = $("#duration");
+
+var $submitBtn = $("#submitBtn");
 var $itemList = $("#item-list");
 
 // The API object contains methods for each kind of request we'll make
@@ -54,8 +60,8 @@ var refreshItems = function () {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($items);
+    $itemList.empty();
+    $itemList.append($items);
   });
 };
 
@@ -63,22 +69,27 @@ var refreshItems = function () {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function (event) {
   event.preventDefault();
-
+  console.log("handle form button yea");
   var item = {
     text: $itemText.val().trim(),
+    description: $itemDescription.val().trim(),
+    duration: $itemDuration.val().trim(),
+    category: $itemCategory.val().trim()
   };
-
-  if (!(item.text)) {
-    alert("You must enter example text!");
-    return;
-  }
+  console.log("item: ", item);
 
   API.saveItem(item).then(function () {
     refreshItems();
   });
 
-  $exampleText.val("");
+  $itemText.val("");
+  $itemDescription.val("");
+  $itemDuration.val("");
+  $itemCategory.val("");
 };
+
+
+
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list

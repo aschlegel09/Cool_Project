@@ -10,9 +10,11 @@ module.exports = function (app) {
 
   // Create a new item
   app.post("/api/items", function (req, res) {
+    console.log("in post items")
     db.Item.create({
       text: req.body.text,
-      user: req.body.user,
+      description: req.body.description,
+      duration: req.body.duration,
       complete: req.body.complete,
       category: req.body.category
     }).then(function (dbItem) {
