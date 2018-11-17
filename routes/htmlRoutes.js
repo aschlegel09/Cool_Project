@@ -1,42 +1,38 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+  app.get("/", function (req, res) {
+    res.render("index");
   });
 
-  // Load create page
-  app.get("/create", function(req, res) {
-      res.render("create", {
-      });
+  app.get("/create", function (req, res) {
+    res.render("create");
   });
 
-  // Load example page and pass in an example by id
-  app.get("/view/", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/view", function (req, res) {
+    db.Item.findAll({}).then(function (dbItems) {
       res.render("view", {
-        example: dbExample
+        items: dbItems
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+  app.get("/item/:id", function (req, res) {
+    db.Item.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbItem) {
       res.render("example", {
-        example: dbExample
+        item: dbItem
       });
     });
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
