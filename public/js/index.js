@@ -110,5 +110,5 @@ $itemList.on("click", ".delete", handleDeleteBtnClick);
 $addRow.on("click", function() {
   var d = document.getElementById("inputFields");
 
-  d.innerHTML += "<div class='form-group'><input type='text' id='toDoListItem' class='form-control' aria-describedby='title' placeholder='What do you wanna do?'></div>"; 
+  d.innerHTML += "<div class='form-group'><input type='text' id='toDoListItem' class='form-control' aria-describedby='title' placeholder='What else do you want to do?'></div>"; 
 });
