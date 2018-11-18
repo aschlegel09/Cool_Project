@@ -6,7 +6,7 @@ var $itemText = $("#item-text");
 var $itemDescription = $("#description");
 var $itemCategory = $("#category");
 var $itemDuration = $("#duration");
-
+var $addRow = $('.addRow')
 var $submitBtn = $("#submitBtn");
 var $itemList = $("#item-list");
 
@@ -106,3 +106,9 @@ var handleDeleteBtnClick = function () {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $itemList.on("click", ".delete", handleDeleteBtnClick);
+
+$addRow.on("click", function() {
+  var d = document.getElementById("inputFields");
+
+  d.innerHTML += "<div class='form-group'><input type='text' id='toDoListItem' class='form-control' aria-describedby='title' placeholder='What do you wanna do?'></div>"; 
+});

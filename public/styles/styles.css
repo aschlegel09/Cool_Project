@@ -28,10 +28,18 @@ body {
 }
 
 #pageFooter {
+  margin-top: 5%;
   background-color: rgba(20, 13, 51, 0.8) !important;
   color: grey;
 }
 
+.submitBtn {
+  margin-bottom: 5%;
+}
+
+#createTitle {
+  color: white;
+}
 
 /* .linespacing-title {
   line-height: 1;
