@@ -33,11 +33,13 @@ body {
   color: grey;
 }
 
-.submitBtn {
+#submitBtn {
   margin-bottom: 5%;
+  background-color: rgba(20, 13, 51, 0.3);
+
 }
 
-#createTitle {
+#createTitle, #viewListTitle {
   color: white;
 }
 
