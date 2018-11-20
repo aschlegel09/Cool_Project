@@ -3,13 +3,21 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">Example List Item</h5>
+          <h5 class="card-title">{{item.text}}</h5>
           <p>
-            <strong>ID</strong>: {{item.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{item.title}}</p>
+            {{!-- <strong>ID</strong>: {{item.id}}</p> --}}
+
+            <strong>Description</strong>: {{item.description}}</p>
+
+             <strong>Category</strong>: {{item.category}}</p>
+
+              <strong>Time Frame</strong>: {{item.duration}}</p>
+
+            <hr>
+
             <a href="/">← Back To Home</a>
+
+
         </div>
       </div>
     </div>

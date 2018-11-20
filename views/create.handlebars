@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
-                <h2>Bucket List!</h2>
+                <h2 id="createTitle">Create Your Bucket List!</h2>
 
                 {{!-- START CREATE FORM --}}
                 <form class="clearfix mb-4">
@@ -52,22 +52,13 @@
                         </div>
 
 
-            <div id="content">
+            <div id="inputFields">
                 <div class="form-group">
                         <label for="title">Add Items</label>
-                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
-                    </div>
-                     <div class="form-group">
-                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="title" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
+                        <input type="text" id="toDoListItem" class="form-control" aria-describedby="title" placeholder="Climb a mountain">
                     </div>
             </div>  
-            <button type="button" class="btn addmore" id="optionBtn">Click me</button>
-
-       {{!-- <input type="button" id="moreFields" value="Add More" /> --}}
+            <button type="button" class="btn addRow" id="optionBtn">Add More</button>
    
 <br>
                 <button type="submit" class="btn btn-secondary float-right submit action-button submitBtn" onClick="location.href = '/view'" id="submitBtn">Submit</button>
