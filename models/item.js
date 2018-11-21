@@ -4,7 +4,8 @@ module.exports = function(sequelize, DataTypes) {
     description: { type: DataTypes.TEXT },
     duration: { type: DataTypes.STRING },
     complete: { type: DataTypes.BOOLEAN, defaultValue: false },
-    category: { type: DataTypes.STRING, defaultValue: "Personal" }
+    category: { type: DataTypes.STRING, defaultValue: "Personal" },
+    toDoListItem: {type: DataTypes.STRING}
   });
   return Item;
 };

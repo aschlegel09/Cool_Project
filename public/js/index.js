@@ -8,7 +8,7 @@ var $itemCategory = $("#category");
 var $itemDuration = $("#duration");
 var $addRow = $('.addRow')
 var $submitBtn = $("#submitBtn");
-var $itemList = $("#item-list");
+var $toDoListItem = $("#toDoListItem");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -60,8 +60,8 @@ var refreshItems = function () {
       return $li;
     });
 
-    $itemList.empty();
-    $itemList.append($items);
+    $toDoListItem.empty();
+    $toDoListItem.append($items);
   });
 };
 
@@ -74,7 +74,8 @@ var handleFormSubmit = function (event) {
     text: $itemText.val().trim(),
     description: $itemDescription.val().trim(),
     duration: $itemDuration.val().trim(),
-    category: $itemCategory.val().trim()
+    category: $itemCategory.val().trim(),
+    toDoListItem: $toDoListItem.val().trim()
   };
   console.log("item: ", item);
 
@@ -86,6 +87,7 @@ var handleFormSubmit = function (event) {
   $itemDescription.val("");
   $itemDuration.val("");
   $itemCategory.val("");
+  $toDoListItem.val("");
 };
 
 
@@ -105,8 +107,18 @@ var handleDeleteBtnClick = function () {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$itemList.on("click", ".delete", handleDeleteBtnClick);
+$toDoListItem.on("click", ".delete", handleDeleteBtnClick);
 
-$addRow.on("click", function() {
- $("#inputFields").append("<div class='form-group'><input type='text' id='toDoListItem' class='form-control' aria-describedby='title' placeholder='What else do you want to do?'></div>"); 
+// $addRow.on("click", function() {
+//  $("#inputFields").append("<div class='form-group'><input type='text' id="toDoListItem'+count+'" class='form-control' aria-describedby='title' placeholder='What else do you want to do?'></div>"); 
+// });
+
+$(function(){
+  var count = 0;
+  $('.addRow').click(function(){
+    $('#inputFields').append('<div class="form-group"> <input type="text" id="toDoListItem'+count+'" class="form-control" placeholder="What else do you want to do?"></div>');
+    count++;
+    // Test that count variable is working
+    // console.log(count);
+  });
 });
