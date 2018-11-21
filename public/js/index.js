@@ -60,8 +60,8 @@ var refreshItems = function () {
       return $li;
     });
 
-    $itemList.empty();
-    $itemList.append($items);
+    $toDoListItem.empty();
+    $toDoListItem.append($items);
   });
 };
 
