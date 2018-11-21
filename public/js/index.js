@@ -8,6 +8,7 @@ var $itemCategory = $("#category");
 var $itemDuration = $("#duration");
 var $addRow = $('.addRow')
 var $submitBtn = $("#submitBtn");
+var $itemList = $("#item-list");
 var $toDoListItem = $("#toDoListItem");
 
 // The API object contains methods for each kind of request we'll make
@@ -60,8 +61,8 @@ var refreshItems = function () {
       return $li;
     });
 
-    $toDoListItem.empty();
-    $toDoListItem.append($items);
+    $itemList.empty();
+    $itemList.append($items);
   });
 };
 
@@ -107,7 +108,7 @@ var handleDeleteBtnClick = function () {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$toDoListItem.on("click", ".delete", handleDeleteBtnClick);
+$itemList.on("click", ".delete", handleDeleteBtnClick);
 
 // $addRow.on("click", function() {
 //  $("#inputFields").append("<div class='form-group'><input type='text' id="toDoListItem'+count+'" class='form-control' aria-describedby='title' placeholder='What else do you want to do?'></div>"); 
