@@ -1,7 +1,4 @@
-// Get references to page elements
-
-console.log("help me");
-
+// References to page elements
 var $itemText = $("#item-text");
 var $itemDescription = $("#description");
 var $itemCategory = $("#category");
@@ -10,6 +7,7 @@ var $addRow = $('.addRow')
 var $submitBtn = $("#submitBtn");
 var $itemList = $("#item-list");
 var $toDoListItem = $("#toDoListItem");
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -37,7 +35,8 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
+
+// refreshItems gets new items from the db and repopulates the list
 var refreshItems = function () {
   API.getItems().then(function (data) {
     var $items = data.map(function (item) {
@@ -66,11 +65,12 @@ var refreshItems = function () {
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+
+// handleFormSubmit is called whenever we submit a new list
+// Save the new list to the db and refresh the list
 var handleFormSubmit = function (event) {
   event.preventDefault();
-  console.log("handle form button yea");
+
   var item = {
     text: $itemText.val().trim(),
     description: $itemDescription.val().trim(),
@@ -78,7 +78,6 @@ var handleFormSubmit = function (event) {
     category: $itemCategory.val().trim(),
     toDoListItem: $toDoListItem.val().trim()
   };
-  console.log("item: ", item);
 
   API.saveItem(item).then(function () {
     refreshItems();
@@ -90,8 +89,6 @@ var handleFormSubmit = function (event) {
   $itemCategory.val("");
   $toDoListItem.val("");
 };
-
-
 
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -106,20 +103,17 @@ var handleDeleteBtnClick = function () {
   });
 };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$itemList.on("click", ".delete", handleDeleteBtnClick);
 
-// $addRow.on("click", function() {
-//  $("#inputFields").append("<div class='form-group'><input type='text' id="toDoListItem'+count+'" class='form-control' aria-describedby='title' placeholder='What else do you want to do?'></div>"); 
-// });
-
-$(function(){
+// Logic for adding another row for items
+var anotherItemRow = function () {
   var count = 0;
   $('.addRow').click(function(){
     $('#inputFields').append('<div class="form-group"> <input type="text" id="toDoListItem'+count+'" class="form-control" placeholder="What else do you want to do?"></div>');
     count++;
-    // Test that count variable is working
-    // console.log(count);
   });
-});
+};
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on("click", handleFormSubmit);
+$itemList.on("click", ".delete", handleDeleteBtnClick);
+$addRow.on("click", anotherItemRow);
