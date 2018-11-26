@@ -1,41 +1,43 @@
- <div class="container">
-    <div class="row">
-        <div class="col">
-           <h3 id="viewListTitle">View Lists</h3>
-         </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col">
-        <ul id="item-list" class="list-group">
-          {{#each items}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="item/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-        
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 id="viewListTitle">View Lists</h3>
     </div>
   </div>
 
 
+
+
+  <div class="row">
+    <div class="col">
+      <ul id="item-list" class="list-group">
+        {{#each items}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="item/{{this.id}}">{{this.text}}</a>
+          <button class="btn btn-danger float-right delete">ｘ</button>
+        </li>
+        {{/each}}
+      </ul>
+
+    </div>
+  </div>
+  <button type="button" class="btn btn-secondary btn-lg" onClick="location.href = '/create'" id="optionBtn">Create
+    Another List ✏️</button>
+
+</div>
+
+
 <script type='text/javascript'>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
+  (function () {
+    if (window.localStorage) {
+      if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('firstLoad');
+    }
+  })();
 
 </script>
