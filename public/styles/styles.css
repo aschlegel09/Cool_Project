@@ -43,7 +43,11 @@ body {
   color: white;
 }
 
-/* .linespacing-title {
-  line-height: 1;
-} */
+.linkHome {
+color: rgba(255, 255, 255, 0.7);
+}
 
+.linkHome:hover {
+  color:  rgba(179, 177, 191, 0.7);
+
+  }
