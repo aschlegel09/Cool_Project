@@ -31,6 +31,21 @@ module.exports = function (app) {
     });
   });
 
+
+    // Load example page and pass in an example by id
+    app.get("/category/:category", function (req, res) {
+      db.Item.findAll({
+        where: {
+          category: req.params.category
+        }
+      }).then(function (dbItems) {
+        res.render("view", {
+          items: dbItems
+        });
+      });
+    });
+  
+
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
