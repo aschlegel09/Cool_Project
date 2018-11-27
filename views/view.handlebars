@@ -1,5 +1,5 @@
 <body>
-  <div class="container">
+  <div class="container thetop">
     <div class="row">
       <div class="col">
 
@@ -37,7 +37,7 @@
           <a id="listLink" href="item/{{this.id}}">{{this.text}}</a>
         </div>
         <div class="card-body">
-          <h6 class="card-title">(DESCRIPTION) {{this.description}}</h6>
+          <h6 class="card-title"><strong>{{this.description}}</strong></h6>
           <p class="card-text">Category: {{this.category}}</p>
           <p class="to-do-items"> {{#each item}}
             <li>{{toDoListItem}}</li>
@@ -45,6 +45,9 @@
         </div>
       </div>
       {{/each}}
+    </div>
+    <div class='scrollToTop'>
+    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
     </div>
   </div>
 
@@ -64,5 +67,6 @@
         localStorage.removeItem('firstLoad');
     }
   })();
+
 
 </script>
