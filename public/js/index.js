@@ -105,15 +105,17 @@ var handleDeleteBtnClick = function () {
 
 
 // Logic for adding another row for items
-var anotherItemRow = function () {
+$(function(){
   var count = 0;
   $('.addRow').click(function(){
     $('#inputFields').append('<div class="form-group"> <input type="text" id="toDoListItem'+count+'" class="form-control" placeholder="What else do you want to do?"></div>');
     count++;
+    // Test that count variable is working
+    console.log(count);
   });
-};
+});
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $itemList.on("click", ".delete", handleDeleteBtnClick);
-$addRow.on("click", anotherItemRow);
