@@ -7,18 +7,21 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
     // easy to logout using passport
+    var name = req.user;
+    console.log("LOGGING OUT " + req.user.username)
     req.logout();
+    req.session.notice = "You have successfully been logged out " + name + "!";
     res.redirect('/');
 });
 
 // auth with google
-router.get('/google', passport.authenticate('google',{
+router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 
 // cb for google to redirect to
 // get profile information this way
-router.get('/google/redirect',  passport.authenticate('google'), (req, res) => {
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
     res.redirect('/profile/');
 });
 
