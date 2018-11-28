@@ -17,7 +17,9 @@ module.exports = function (app) {
       duration: req.body.duration,
       complete: req.body.complete,
       category: req.body.category,
-      toDoListItem: req.body.toDoListItem
+      toDoListItem: req.body.toDoListItem,
+      toDoListItem0: req.body.toDoListItem0
+
     }).then(function (dbItem) {
       res.json(dbItem);
     });
