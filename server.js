@@ -30,9 +30,12 @@ app.use(passport.session());
 // if in production use production url, if not use development
 // process.env.NODE_ENV="production"
 // process.env.MONGOLAB_URI
-let MONGOLAB_URI = process.env.MONGOLAB_URI || keys.mongodb.dbURI;
-mongoose.connect(MONGOLAB_URI);
-console.log(MONGOLAB_URI + "connected to mongodb");
+// let MONGOLAB_URI = process.env.MONGOLAB_URI || keys.mongodb.dbURI;
+// mongoose.connect(MONGOLAB_URI);
+// console.log(MONGOLAB_URI + "connected to mongodb");
+
+let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/accounts';
+mongoose.connect(MONGODB_URI);
 
 // set up routes
 app.use('/auth', authRoutes);
