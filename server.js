@@ -18,7 +18,7 @@ var PORT = process.env.PORT || 3000;
 // oauth start
 // set up cookie session for one day and encryption
 app.use(cookieSession({
-  maxAge: 24*60*60*1000,
+  maxAge: 24 * 60 * 60 * 1000,
   keys: [keys.session.cookieKey]
 }));
 
@@ -27,8 +27,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () =>{
-  console.log('connected to mongodb');
+// if in production use production url, if not use development
+// process.env.NODE_ENV="production"
+// process.env.MONGOLAB_URI
+
+mongoose.connect(keys.mongodb.dbURI, () => {
+  if (process.env.NODE_ENV === "production") {
+    console.log(process.env.MONGOLAB_URI);
+    console.log('connected to mongodb')
+    mongoose.connect(process.env.MONGOLAB_URI);
+  } else {
+    console.log('connected in test')
+  }
 });
 
 // set up routes
@@ -63,8 +73,8 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
