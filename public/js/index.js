@@ -7,6 +7,8 @@ var $addRow = $(".addRow");
 var $submitBtn = $("#submitBtn");
 var $itemList = $("#item-list");
 var $toDoListItem = $("#toDoListItem");
+var $toDoListItem0 = $("#toDoListItem0");
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -73,7 +75,9 @@ var handleFormSubmit = function(event) {
     description: $itemDescription.val().trim(),
     duration: $itemDuration.val().trim(),
     category: $itemCategory.val().trim(),
-    toDoListItem: $toDoListItem.val().trim()
+    toDoListItem: $toDoListItem.val().trim(),
+    toDoListItem0: $toDoListItem0.val().trim()
+
   };
 
   API.saveItem(item).then(function() {
@@ -85,6 +89,9 @@ var handleFormSubmit = function(event) {
   $itemDuration.val("");
   $itemCategory.val("");
   $toDoListItem.val("");
+  $toDoListItem0.val("");
+
+
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -101,7 +108,7 @@ var handleDeleteBtnClick = function() {
 
 // Logic for adding another row for items
 $(function() {
-  var count = 0;
+  var count = 1;
   $(".addRow").click(function() {
     $("#inputFields").append(
       '<div class="form-group"> <input type="text" id="toDoListItem' +
