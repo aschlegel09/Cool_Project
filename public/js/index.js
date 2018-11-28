@@ -8,6 +8,8 @@ var $submitBtn = $("#submitBtn");
 var $itemList = $("#item-list");
 var $toDoListItem = $("#toDoListItem");
 var $toDoListItem0 = $("#toDoListItem0");
+var $toDoListItem1 = $("#toDoListItem1");
+
 
 
 // The API object contains methods for each kind of request we'll make
@@ -68,17 +70,27 @@ var refreshItems = function() {
 // handleFormSubmit is called whenever we submit a new list
 // Save the new list to the db and refresh the list
 var handleFormSubmit = function(event) {
+  console.log("hello");
+  
   event.preventDefault();
-
+  
   var item = {
     text: $itemText.val().trim(),
     description: $itemDescription.val().trim(),
     duration: $itemDuration.val().trim(),
     category: $itemCategory.val().trim(),
     toDoListItem: $toDoListItem.val().trim(),
-    toDoListItem0: $toDoListItem0.val().trim()
+    toDoListItem0: $toDoListItem0.val().trim(),
+    toDoListItem1: ($("#toDoListItem1").val())
 
+
+    
   };
+  
+  console.log($toDoListItem.val().trim());
+  console.log($toDoListItem0.val().trim());
+  console.log($("#toDoListItem1").val());
+
 
   API.saveItem(item).then(function() {
     refreshItems();
@@ -90,6 +102,7 @@ var handleFormSubmit = function(event) {
   $itemCategory.val("");
   $toDoListItem.val("");
   $toDoListItem0.val("");
+  $toDoListItem1.val("");
 
 
 };
@@ -110,11 +123,7 @@ var handleDeleteBtnClick = function() {
 $(function() {
   var count = 1;
   $(".addRow").click(function() {
-    $("#inputFields").append(
-      '<div class="form-group"> <input type="text" id="toDoListItem' +
-        count +
-        '" class="form-control" placeholder="What else do you want to do?"></div>'
-    );
+    $('<input>', { class: 'toDoListItem', id: "toDoListItem" + count, type: 'text', name: 'info[]' }).insertAfter('#inputFields');
     count++;
     // Test that count variable is working
     console.log(count);

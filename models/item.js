@@ -7,6 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     category: { type: DataTypes.STRING, defaultValue: "Personal" },
     toDoListItem: {type: DataTypes.STRING, defaultValue: "Fly a kite"},
     toDoListItem0: {type: DataTypes.STRING, defaultValue: "Fly a kite"},
+    toDoListItem1: {type: DataTypes.STRING, defaultValue: "Fly a kite"}
 
   });
   return Item;
