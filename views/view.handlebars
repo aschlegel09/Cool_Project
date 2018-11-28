@@ -39,8 +39,8 @@
         <div class="card-body">
           <h6 class="card-title"><strong>{{this.description}}</strong></h6>
           <p class="card-text">Category: {{this.category}}</p>
-          <p class="to-do-items"> {{#each item}}
-            <li>{{toDoListItem}}</li>
+          <p class="to-do-items"> {{#each toDoListItem}}
+            <li>{{this.name}}</li>
             {{/each}}</p>
         </div>
       </div>

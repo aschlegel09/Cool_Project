@@ -16,11 +16,16 @@ module.exports = function (app) {
       description: req.body.description,
       duration: req.body.duration,
       complete: req.body.complete,
-      category: req.body.category,
-      toDoListItem: req.body.toDoListItem
+      category: req.body.category
     }).then(function (dbItem) {
       res.json(dbItem);
     });
+    db.ToDoListItem.create({
+      name: req.body.name
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+      console.log("todo item", dbTodo);
+    })
   });
 
   // Delete an example by id
