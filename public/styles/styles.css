@@ -22,7 +22,7 @@ body {
   color: white;
 }
 
-#optionBtn {
+#optionBtn, #dropdownMenuButton {
   background-color: rgba(20, 13, 51, 0.3);
   color: white;
 }
@@ -43,7 +43,70 @@ body {
   color: white;
 }
 
-/* .linespacing-title {
-  line-height: 1;
-} */
+.linkHome {
+color: rgba(255, 255, 255, 0.7);
+}
 
+.linkHome:hover {
+  color:  rgba(179, 177, 191, 0.7);
+
+  }
+
+  #addMargin {
+    margin-top: 2%;
+  }
+
+  .card {
+    margin-right: 1.5%;
+  }
+
+  #listLink {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .scrollToTop {
+    display:none;
+    width:100%;
+    margin:0 auto;
+    position:fixed;
+    bottom:20px;
+    right:10px;	
+  }
+  .scroll {
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    background:#b2b2b2;
+    background:rgba(178,178,178,0.7);
+    padding:5px;
+    text-align: center;
+    margin: 0 0 2% 0;
+    cursor:pointer;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s; 		
+  }
+  .scroll:hover {
+    background:rgba(178,178,178,1.0);
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s; 		
+  }
+  .scroll:hover .fa {
+    padding-top:-10px;
+  }
+  .scroll .fa {
+    font-size:30px;
+    margin-top:-5px;
+    margin-left:1px;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s; 	
+  }
+
+  #addBottomMargin {
+    margin-bottom: 7%;
+  }

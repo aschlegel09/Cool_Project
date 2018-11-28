@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <!-- NAV BAR -->
-  <nav class="navbar">
-    <!-- TITLE -->
-    {{!--
-    <a class="navbar-brand" href="#">Bucketlistr</a> --}}
-    <!-- USER -->
-    <button type="button" class="btn btn-secondary btn-lrg ml-auto" id="signInBtn">
-      <span class="fa fa-user-circle" aria-hidden="true"></span> Sign In
-    </button>
-  </nav>
 <head>
   <meta charset="utf-8">
   {{!-- Link to Bootstrap --}}
@@ -27,9 +17,17 @@
 </head>
 
 <body>
+  <!-- NAV BAR -->
+  <nav class="navbar">
+    <!-- TITLE -->
+    
+    <a class="navbar-brand linkHome" href="/">Bucketlistr</a>
+    <!-- USER -->
+    <button type="button" class="btn btn-secondary btn-lrg ml-auto" id="signInBtn" data-toggle="modal" data-target="#signInModal">
+      <span class="fa fa-user-circle" aria-hidden="true"></span> Sign In
+    </button>
+  </nav>
   {{{body}}}
-</body>
-
 
 {{!-- START FOOTER --}}
 <div class="navbar navbar-dark bg-dark fixed-bottom" id="pageFooter">
@@ -50,7 +48,49 @@
 </div>
 </html>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+</body>
+
+
+
+
+<!-- START SIGN IN MODAL -->
+
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!-- MODAL CONTENT HOLDER -->
+    <div class="modal-content">
+      <!-- MODAL HEADER -->
+      <div class="modal-header">
+        <!-- MODAL TITLE -->
+        <h5 class="modal-title" id="modalLabel">Sign In</h5>
+        <!-- CLOSE BUTTON -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- MODAL BODY -->
+      <div class="modal-body">
+        <!-- INPUT FIELDS -->
+        <label for="inputFirstName">Email</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="thisismyemail@email.com">
+        <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="●●●●●●●●●">
+
+      </div>
+
+      <!-- MODAL FOOTER -->
+      <div class="modal-footer">
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn btn-secondary" id="submitReg" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

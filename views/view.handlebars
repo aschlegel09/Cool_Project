@@ -1,41 +1,73 @@
- <div class="container">
-    <div class="row">
-        <div class="col">
-           <h3 id="viewListTitle">View Lists</h3>
-         </div>
-    </div>
-
-
+<body>
+  <div class="container thetop">
     <div class="row">
       <div class="col">
-        <ul id="item-list" class="list-group">
-          {{#each items}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="item/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-        
+
+        <div class="dropdown">
+          <h1 class="display-4" id="viewListTitle">View Lists </h1>
+          <button type="button" class="btn btn-secondary pull-right" onClick="location.href = '/create'" id="optionBtn">  <span class="fa fa-plus" aria-hidden="true"></span></button>
+
+          <button class="btn btn-secondary dropdown-toggle pull-right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            View by category
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/view/">View All</a>
+
+            <a class="dropdown-item" href="/category/family">Family</a>
+            <a class="dropdown-item" href="/category/food%20and%20drink">Food and Drink</a>
+            <a class="dropdown-item" href="/category/friendships">Friendships</a>
+            <a class="dropdown-item" href="/category/general">General</a>
+            <a class="dropdown-item" href="/category/outdoor%20adventures">Outdoor Adventures</a>
+            <a class="dropdown-item" href="/category/travel">Travel</a>
+          </div>
+        </div>
+
+
+      </div>
     </div>
+
+
+<div id="addBottomMargin">
+    <div class="row addSideMargin" id="addMargin">
+      {{#each items}}
+      <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <a id="listLink" href="item/{{this.id}}">{{this.text}}</a>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><strong>{{this.description}}</strong></h6>
+          <p class="card-text">Category: {{this.category}}</p>
+          <p class="to-do-items"> {{#each item}}
+            <li>{{toDoListItem}}</li>
+            {{/each}}</p>
+        </div>
+      </div>
+      {{/each}}
     </div>
+    <div class='scrollToTop'>
+    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+    </div>
+  </div>
   </div>
 
 
+
+</body>
+
 <script type='text/javascript'>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-})();
+  (function () {
+    if (window.localStorage) {
+      if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = true;
+        window.location.reload();
+      }
+      else
+        localStorage.removeItem('firstLoad');
+    }
+  })();
+
 
 </script>
