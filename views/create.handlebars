@@ -55,8 +55,8 @@
             {{!-- <div id="inputFields"> --}}
                 <div class="form-group" id="inputFields">
                         <label for="toDoListItem">Add Items</label>
-                        <input type="text" id="toDoListItem" class="form-control" placeholder="Climb a mountain">
-                                                <input type="text" id="toDoListItem0" class="form-control" placeholder="Climb a mountain">
+                        <input type="text" id="toDoListItem" class="form-control toDoListItem" placeholder="Climb a mountain">
+                                                <input type="text" id="toDoListItem0" class="form-control toDoListItem" placeholder="Climb a mountain">
 
                     </div>
             {{!-- </div>   --}}
@@ -64,6 +64,8 @@
    
 <br>
                 <button type="submit" class="btn btn-secondary float-right submit action-button submitBtn" onClick="location.href = '/view'" id="submitBtn">Submit</button>
+                                {{!-- <button type="submit" class="btn btn-secondary float-right submit action-button submitBtn" id="submitBtn">Submit</button> --}}
+
                 </form>
             </div>
         </div>
