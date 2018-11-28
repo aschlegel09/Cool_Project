@@ -34,7 +34,6 @@ body {
 }
 
 #submitBtn {
-  margin-bottom: 5%;
   background-color: rgba(20, 13, 51, 0.3);
 
 }
@@ -110,3 +109,43 @@ color: rgba(255, 255, 255, 0.7);
   #addBottomMargin {
     margin-bottom: 7%;
   }
+
+
+  /* <div class="card mb-3" style="max-width: 20rem;">
+  <div class="card-header">
+    <a id="listLink" href="item/{{this.id}}">{{this.text}}</a>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title"><strong>{{this.description}}</strong></h6>
+    <p class="card-text">Category: {{this.category}}</p>
+    <p class="to-do-items"> {{#each item}}
+      <li>{{toDoListItem}}</li>
+      {{/each}}</p>
+  </div>
+</div> */
+
+.card {
+  /* background-color: rgba(35, 29, 63, 0.9) !important; */
+background-image: url("./images/linedpaper.png");
+min-width: 250px;
+}
+
+#listLink {
+  color: rgb(71, 62, 110);
+}
+.card-title {
+  color: rgb(63, 53, 107);
+}
+
+.card-text, #createTitle {
+  color: rgb(71, 62, 110);
+
+}
+
+#createBg{
+  margin-bottom: 5%;
+  background-image: url("./images/linedpaper.png");
+padding: 5%;
+color: rgb(71, 62, 110);
+
+}
