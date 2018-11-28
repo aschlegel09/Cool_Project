@@ -1,14 +1,26 @@
-<div>
-    <nav>
-        <ul>
-            <li><a href="/auth/logout">Logout</a></li>
-            <li><a href="/auth/login">Login</a></li>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/profile">Profile</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>Welcome to your profile.
-        </h1>
-    </header>
+<nav>
+    <ul>
+        <li class="profileBtn"><a class="profileLink" href="/">Homepage</a></li>
+        <li class="profileBtn"><a class="profileLink" href="/auth/logout">Logout</a></li>
+        {{!-- <li class="profileBtn"><a class="profileLink" href="/auth/login">Login</a></li> --}}
+        {{!-- <li class="profileBtn"><a class="profileLink" href="/profile">Profile</a></li> --}}
+    </ul>
+</nav>
+<div id="create">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h2 id="createTitle">Welcome to your profile, {{user.username}}!
+                        </h2><br>
+                        <button type="button" class="btn btn-secondary btn-lg" onClick="location.href = '/create'" id="optionBtn">Create
+                            Your List ✏️</button><br><br>
+                        <button type="button" class="btn btn-secondary btn-lg" onClick="location.href = '/view'" id="optionBtn">View
+                            Lists 📓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

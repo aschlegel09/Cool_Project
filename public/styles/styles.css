@@ -36,7 +36,23 @@ body {
 #submitBtn {
   margin-bottom: 5%;
   background-color: rgba(20, 13, 51, 0.3);
+}
 
+#googleBtn {
+  background-color: #a10000;
+  background-image: url('./images/google-plus.png');
+  background-repeat: no-repeat;
+  background-size: 18%;
+  padding-left: 8%;
+}
+
+.profileBtn {
+  text-decoration: none;
+  list-style: none;
+}
+
+.profileLink {
+  color: white;
 }
 
 #createTitle, #viewListTitle {
