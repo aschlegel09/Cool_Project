@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all items in list
   app.get("/api/items", function (req, res) {
-    db.Item.findAll().then(function (dbItems) {
+    db.findAll().then(function (dbItems) {
       res.json(dbItems);
     });
   });
@@ -17,9 +17,6 @@ module.exports = function (app) {
       duration: req.body.duration,
       complete: req.body.complete,
       category: req.body.category,
-      toDoListItem: req.body.toDoListItem,
-      toDoListItem0: req.body.toDoListItem0,
-      toDoListItem1: req.body.toDoListItem1
 
     }).then(function (dbItem) {
       res.json(dbItem);

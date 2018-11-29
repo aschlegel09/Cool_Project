@@ -10,5 +10,11 @@ module.exports = function(sequelize, DataTypes) {
     toDoListItem1: {type: DataTypes.STRING, defaultValue: "Fly a kite"}
 
   });
+
+  Item.associate = function(models) {
+    Item.hasMany(models.ToDoListItem, {
+      onDelete: "cascade"
+    });
+  };
   return Item;
 };
