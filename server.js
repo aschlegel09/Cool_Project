@@ -30,8 +30,8 @@ app.use(passport.session());
 // if in production use production url, if not use development
 // process.env.NODE_ENV="production"
 // process.env.MONGODB_URI
-let MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/accounts';
-mongoose.connect(MONGODB_URI);
+let MONGODBURI = process.env.MONGODBURI || 'mongodb://localhost/accounts';
+mongoose.connect(MONGODBURI);
 
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);

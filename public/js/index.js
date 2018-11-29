@@ -9,6 +9,27 @@ var $itemList = $("#item-list");
 var $toDoListItem = $("#toDoListItem");
 var $toDoListItem0 = $("#toDoListItem0");
 var $toDoListItem1 = $("#toDoListItem1");
+var $toDoListItem2 = $("#toDoListItem2");
+var $toDoListItem3 = $("#toDoListItem3");
+var $toDoListItem4 = $("#toDoListItem4");
+var $toDoListItem5 = $("#toDoListItem5");
+var $toDoListItem6 = $("#toDoListItem6");
+var $toDoListItem7 = $("#toDoListItem7");
+var $toDoListItem8 = $("#toDoListItem8");
+var $toDoListItem9 = $("#toDoListItem9");
+var $toDoListItem10 = $("#toDoListItem10");
+var $toDoListItem11 = $("#toDoListItem11");
+var $toDoListItem12 = $("#toDoListItem12");
+var $toDoListItem13 = $("#toDoListItem13");
+var $toDoListItem14 = $("#toDoListItem14");
+var $toDoListItem15 = $("#toDoListItem15");
+var $toDoListItem16 = $("#toDoListItem16");
+var $toDoListItem17 = $("#toDoListItem17");
+var $toDoListItem18 = $("#toDoListItem18");
+var $toDoListItem19 = $("#toDoListItem19");
+var $toDoListItem20 = $("#toDoListItem20");
+
+
 
 
 
@@ -80,16 +101,36 @@ var handleFormSubmit = function(event) {
     duration: $itemDuration.val().trim(),
     category: $itemCategory.val().trim(),
     toDoListItem: $toDoListItem.val().trim(),
-    toDoListItem0: $toDoListItem0.val().trim(),
-    toDoListItem1: ($("#toDoListItem1").val())
+    toDoListItem0: ($("#toDoListItem0").val()),
+    toDoListItem1: ($("#toDoListItem1").val()),
+    toDoListItem2: ($("#toDoListItem2").val()),
+    toDoListItem3: ($("#toDoListItem3").val()),
+    toDoListItem4: ($("#toDoListItem4").val()),
+    toDoListItem5: ($("#toDoListItem5").val()),
+    toDoListItem6: ($("#toDoListItem6").val()),
+    toDoListItem7: ($("#toDoListItem7").val()),
+    toDoListItem8: ($("#toDoListItem8").val()),
+    toDoListItem9: ($("#toDoListItem9").val()),
+    toDoListItem10: ($("#toDoListItem10").val()),
+    toDoListItem11: ($("#toDoListItem11").val()),
+    toDoListItem12: ($("#toDoListItem12").val()),
+    toDoListItem13: ($("#toDoListItem13").val()),
+    toDoListItem14: ($("#toDoListItem14").val()),
+    toDoListItem15: ($("#toDoListItem15").val()),
+    toDoListItem16: ($("#toDoListItem16").val()),
+    toDoListItem17: ($("#toDoListItem17").val()),
+    toDoListItem18: ($("#toDoListItem18").val()),
+    toDoListItem19: ($("#toDoListItem19").val()),
+    toDoListItem20: ($("#toDoListItem20").val())
+
 
 
     
   };
   
-  console.log($toDoListItem.val().trim());
-  console.log($toDoListItem0.val().trim());
-  console.log($("#toDoListItem1").val());
+  // console.log($toDoListItem.val().trim());
+  // console.log($toDoListItem0.val().trim());
+  // console.log($("#toDoListItem1").val().trim());
 
 
   API.saveItem(item).then(function() {
@@ -121,10 +162,12 @@ var handleDeleteBtnClick = function() {
 
 // Logic for adding another row for items
 $(function() {
-  var count = 1;
+  var count = 0;
   $(".addRow").click(function() {
-    $('<input>', { class: 'toDoListItem', id: "toDoListItem" + count, type: 'text', name: 'info[]' }).insertAfter('#inputFields');
     count++;
+    var placeAfter = "#toDoListItem" + (count-1);
+    console.log(placeAfter);
+    $('<input>', { class: 'toDoListItem form-control', id: "toDoListItem" + count, type: 'text', name: 'info[]', placeholder: 'Climb another mountain' }).insertAfter(placeAfter);
     // Test that count variable is working
     console.log(count);
   });
@@ -152,3 +195,5 @@ $(function() {
     return false;
   });
 });
+
+

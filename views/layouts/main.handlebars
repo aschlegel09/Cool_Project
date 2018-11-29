@@ -25,7 +25,7 @@
     <a class="navbar-brand linkHome" href="/">Bucketlistr</a>
     <!-- USER -->
     <button type="button" class="btn btn-secondary btn-lrg ml-auto" id="signInBtn" data-toggle="modal" data-target="#signInModal">
-      <span class="fa fa-user-circle" aria-hidden="true"></span> Sign In
+      <span class="fa fa-user-circle" aria-hidden="true"></span> User
     </button>
   </nav>
   {{{body}}}
@@ -42,7 +42,7 @@
 
       <div class="row ml-auto">
         <div class="col ml-auto">
-          <small> Created by Salem Bryant, Ian Kimble, Brooke Mitchell, and Andrew Schlegel for Penn LPS Coding
+          <small> Created by Salem Bryant, Brooke Mitchell, and Andrew Schlegel for Penn LPS Coding
             Bootcamp </small>
         </div>
       </div>
@@ -80,19 +80,7 @@
       </div>
       <!-- MODAL BODY -->
       <div class="modal-body">
-        <!-- INPUT FIELDS -->
-        <label for="inputFirstName">Email</label>
-        <input type="text" class="form-control" id="inputEmail" placeholder="thisismyemail@email.com">
-        <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="●●●●●●●●●">
-
-      </div>
-
-      <!-- MODAL FOOTER -->
-      <div class="modal-footer">
-        <!-- SUBMIT BUTTON -->
-        <button type="submit" class="btn btn-secondary" id="submitReg" data-dismiss="modal">Submit</button>
-        <br><br><button type="button" class="btn btn-secondary" onClick="location.href = '/auth/google'" id="googleBtn">Sign
+      <button type="button" class="btn btn-secondary btn-lg" onClick="location.href = '/auth/google'" id="googleBtn">Sign
           In with Google+</button>
       </div>
     </div>
