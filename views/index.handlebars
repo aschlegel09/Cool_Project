@@ -1,6 +1,10 @@
 {{!-- HOME PAGE --}}
 <div id="index">
-
+<nav>
+    <ul>
+        {{#if user.username}}<li class="profileBtn"><a class="profileLink" href="/profile">Profile</a></li>{{/if}}
+    </ul>
+</nav>
 
  {{!-- CONTENT --}}
   <div class="container-fluid">

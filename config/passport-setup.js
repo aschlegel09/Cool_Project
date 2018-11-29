@@ -31,16 +31,17 @@ passport.use(
         User.findOne({ googleId: profile.id }).then((currentUser) => {
             if (currentUser) {
                 //already have this user
-                console.log('User is: ' + currentUser);
+                console.log('Existing user is logged in: ' + currentUser);
                 done(null, currentUser);
             } else {
                 // if not, create user in db
                 // create new user model
                 new User({
                     username: profile.displayName,
-                    googleId: profile.id
+                    googleId: profile.id,
+                    image: profile._json.image.url
                 }).save().then((newUser) => {
-                    console.log("new user created: " + newUser);
+                    console.log("New user created: " + newUser);
                     done(null, newUser);
                 });
             }
