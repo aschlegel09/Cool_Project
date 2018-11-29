@@ -32,20 +32,22 @@
 <div id="addBottomMargin">
     <div class="row addSideMargin" id="addMargin">
       {{#each items}}
-      <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+      <div class="card mb-3" style="max-width: 20rem;">
         <div class="card-header">
           <a id="listLink" href="item/{{this.id}}">{{this.text}}</a>
         </div>
         <div class="card-body">
           <h6 class="card-title"><strong>{{this.description}}</strong></h6>
           <p class="card-text">Category: {{this.category}}</p>
-          <p class="to-do-items"> 
+          {{!-- <p class="to-do-items"> 
             <li>{{this.toDoListItem}}</li>
-                        <li>{{this.toDoListItem0}}</li>
-                                                <li>{{this.toDoListItem1}}</li>
 
+  {{#with toDoListItem0}} <li> {{this}} </li> {{/with}}
+    {{#with toDoListItem1}} <li> {{this}} </li> {{/with}}
 
-           </p>
+</ul> --}}
+
+           {{!-- </p> --}}
         </div>
       </div>
       {{/each}}

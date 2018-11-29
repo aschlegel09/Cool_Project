@@ -55,7 +55,7 @@ body {
   color: white;
 }
 
-#createTitle, #viewListTitle {
+#viewListTitle {
   color: white;
 }
 
@@ -74,10 +74,14 @@ color: rgba(255, 255, 255, 0.7);
 
   .card {
     margin-right: 1.5%;
+    min-width: 300px;
+    background-image: URL("./images/lightpaperfibers_@2X.png");    
+    background-size: contain;
+    color: rgb(61, 52, 97);
   }
 
   #listLink {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgb(61, 52, 97);
   }
 
   .scrollToTop {
@@ -130,3 +134,28 @@ color: rgba(255, 255, 255, 0.7);
   /* #toDoListItem1 {
     background-color: red;
   } */
+
+  .centerText {
+    text-align: center;
+  }
+
+  .formatList {
+    padding-left: 25%;
+  }
+
+  .createBox {
+    background-image: URL("./images/lightpaperfibers_@2X.png");
+    background-size: cover;
+    color: rgb(61, 52, 97);
+    padding: 5px 50px;
+    padding-top: 50px;
+    margin-bottom: 8%;
+  }
+
+  .toDoListItem {
+    width: 100%;
+  }
+
+  #welcomeTitle {
+    color: white;
+  }
