@@ -1,9 +1,6 @@
 <nav>
     <ul>
-        <li class="profileBtn"><a class="profileLink" href="/">Homepage</a></li>
         <li class="profileBtn"><a class="profileLink" href="/auth/logout">Logout</a></li>
-        {{!-- <li class="profileBtn"><a class="profileLink" href="/auth/login">Login</a></li> --}}
-        {{!-- <li class="profileBtn"><a class="profileLink" href="/profile">Profile</a></li> --}}
     </ul>
 </nav>
 <div id="create">
@@ -12,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8 offset-2">
-                        <h2 id="welcomeTitle">Welcome to your profile, {{user.username}}!
+                       <img src="{{user.image}}" alt="user-image"> <h2 id="welcomeTitle">Welcome to your profile, {{user.username}}!
                         </h2><br>
                         <button type="button" class="btn btn-secondary btn-lg" onClick="location.href = '/create'" id="optionBtn">Create
                             Your List ✏️</button>

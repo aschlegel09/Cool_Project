@@ -2,8 +2,8 @@ var router = require('express').Router();
 
 var authCheck = (req, res, next) => {
     if (!req.user) {
-
-        res.redirect('/auth/login');
+// important to redirect to the google authentication screen not the unnecessary login page
+        res.redirect('/auth/google');
     } else {
         // if logged in
         next();
